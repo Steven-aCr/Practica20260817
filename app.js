@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
-mongoose.connect('mongodb://camposrecinos10_db_user:ACR2510@ac-22jq50n-shard-00-00.6csnzru.mongodb.net:27017,ac-22jq50n-shard-00-01.6csnzru.mongodb.net:27017,ac-22jq50n-shard-00-02.6csnzru.mongodb.net:27017/Practica20260817?ssl=true&replicaSet=atlas-npg020-shard-0&authSource=admin&appName=Cluster0')
+mongoose.connect('mongodb://camposrecinos10_db_user:ACR2510@ac-22jq50n-shard-00-00.6csnzru.mongodb.net:27017,ac-22jq50n-shard-00-01.6csnzru.mongodb.net:27017,ac-22jq50n-shard-00-02.6csnzru.mongodb.net:27017/Practica20260905?ssl=true&replicaSet=atlas-npg020-shard-0&authSource=admin&appName=Cluster0')
     .then(() => { console.log('Conectado exitosamente a la base de datos'); })
     .catch((error) => { console.error('Error de conexion a MongoDB:', error); });
 
